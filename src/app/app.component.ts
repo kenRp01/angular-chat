@@ -1,4 +1,16 @@
 import { Component } from '@angular/core';
+import { Comment } from './class/comment';
+import { User } from './class/user';
+
+const CURRENT_USER: User = new User(1, '五十川　洋平');
+const ANOTHER_USER: User = new User(2, '竹井　賢治');
+
+const COMMENTS: Comment[] = [
+  new Comment(ANOTHER_USER, 'お疲れ様です！'),
+  new Comment(ANOTHER_USER, 'この間の件ですが、どうなりましたか？'),
+  new Comment(CURRENT_USER, 'お疲れ様です！'),
+  new Comment(CURRENT_USER, 'クライアントからOKがでました'),
+];
 
 @Component({
   selector: 'app-root',
@@ -6,5 +18,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-chat';
+comments = COMMENTS;
+currentUser = CURRENT_USER;
 }
