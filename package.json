@@ -23,6 +23,7 @@
     "bootstrap": "^4.0.0-beta",
     "date-fns": "^1.29.0",
     "firebase": "^4.8.0",
+    "font-awesome": "^4.7.0",
     "rxjs": "~6.4.0",
     "rxjs-compat": "^6.5.4",
     "tslib": "^1.10.0",
