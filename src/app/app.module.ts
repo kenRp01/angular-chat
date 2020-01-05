@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
@@ -8,15 +10,17 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CommentDatePipe } from './pipe/comment-date.pipe';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CommentDatePipe
+    ChatComponent
   ],
   imports: [
     BrowserModule,
+    CoreModule,
+    SharedModule,
     AppRoutingModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
