@@ -10,7 +10,7 @@ const ANOTHER_USER: User = new User(2, "竹井 賢治");
   selector: "app-root",
   template: `
     <app-header></app-header>
-    <app-chat></app-chat>
+    <router-outlet></router-outlet>
   `,
   styleUrls: ["./app.component.css"]
 })
