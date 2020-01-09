@@ -12,12 +12,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChatComponent } from './chat/chat.component';
 import { NotFoundComponent } from './error/not-found/not-found.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
