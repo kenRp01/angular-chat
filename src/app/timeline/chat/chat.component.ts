@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Comment } from '../class/comment';
-import { User } from '../class/user';
+import { Comment } from '../../class/comment';
+import { User } from '../../class/user';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
-
-// const CURRENT_USER: User = new User(1, '五十川 洋平');
-// const ANOTHER_USER: User = new User(2, '竹井 賢治');
 
 @Component({
   selector: 'app-chat',
@@ -16,13 +13,13 @@ export class ChatComponent implements OnInit {
 
   comments: Comment[];
   commentsRef: AngularFireList<any>;
-  currentUser = User;
+  currentUser: User;
   content = '';
 
   constructor(
     private db: AngularFireDatabase,
     private afAuth: AngularFireAuth) {
-    this.commentsRef = this.db.list('comments');
+    this.commentsRef = this.db.list('/comments');
   }
 
   ngOnInit() {
@@ -33,7 +30,7 @@ export class ChatComponent implements OnInit {
         if (user) {
           this.currentUser = new User(this.afAuth.auth.currentUser);
         }
-      })
+      });
     }
     this.commentsRef.snapshotChanges().subscribe(snapshots => {
       this.comments = snapshots.map(snapshot => {
