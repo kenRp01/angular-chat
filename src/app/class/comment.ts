@@ -12,7 +12,7 @@ export class Comment {
 
   constructor(values: any) {
     this.user = values.user;
-    this.initial = values.initial || values.user.name.slice(0, 1);
+    this.initial = values.initial || values.user.displayName.slice(0, 1);
     this.message = values.message;
     this.date = values.date || format(new Date());
     if (values.key) {
