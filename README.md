@@ -1,5 +1,7 @@
 # AngularChat
-
+Angular学習のため作成した簡易チャットアプリ。
+https://angular-chat-dcc8f.web.app/
+スマホ対応はできていません
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
 
 ## Development server
